@@ -133,9 +133,7 @@ extension String {
                     }
                 } else if scanner.scanString("&") != nil {
                     if let specialString = scanner.scanUpTo(";") {
-                        if let spec = String.specials[specialString] {
-                            resultString += spec
-                        }
+                        resultString += String.specials[specialString] ?? specialString
                         scanner.scanString(";")
                     }
                 }
